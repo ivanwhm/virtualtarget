@@ -59,11 +59,27 @@
     private $dataHoraProgramada;
 
     /**
+     * Cria um objeto com o retorno do método RetornaDadosEnvio, tratando as informações.
+     * 
+     * @param stdClass $retorno Retorno ao método.
+     */
+    public function __construct(stdClass $retorno)
+    {
+      $this->setCampanhaId(isset($retorno->campanhaId) ? $retorno->campanhaId : NULL);
+      $this->setRemetenteNome(isset($retorno->remetente_nome) ? $retorno->remetente_nome : '');
+      $this->setRemetenteEmail(isset($retorno->remetente_email) ? $retorno->remetente_email : '');
+      $this->setRemetenteReplay(isset($retorno->remetente_reply) ? $retorno->remetente_reply : '');
+      $this->setAssunto(isset($retorno->assunto) ? $retorno->assunto : '');
+      $this->setHtml(isset($retorno->html) ? $retorno->html : '');
+      $this->setDataHoraProgramada(isset($retorno->datahora_programada) ? $retorno->datahora_programada : NULL);
+    }
+
+    /**
      * Informa o código da campanha.
      * 
      * @param integer $campanhaId Código da campanha.
      */
-    public function setCampanhaId($campanhaId)
+    private function setCampanhaId($campanhaId)
     {
       $this->campanhaId = (integer) $campanhaId;
     }
@@ -72,7 +88,7 @@
      * Informa o nome do remetente.
      * @param string $remetenteNome Nome do remetente.
      */
-    public function setRemetenteNome($remetenteNome)
+    private function setRemetenteNome($remetenteNome)
     {
       $this->remetenteNome = $remetenteNome;
     }
@@ -82,7 +98,7 @@
      * 
      * @param string $remetenteEmail E-mail do remetente.
      */
-    public function setRemetenteEmail($remetenteEmail)
+    private function setRemetenteEmail($remetenteEmail)
     {
       $this->remetenteEmail = $remetenteEmail;
     }
@@ -92,7 +108,7 @@
      * 
      * @param string $remetenteReplay Endereço de e-mail de resposta.
      */
-    public function setRemetenteReplay($remetenteReplay)
+    private function setRemetenteReplay($remetenteReplay)
     {
       $this->remetenteReplay = $remetenteReplay;
     }
@@ -102,7 +118,7 @@
      * 
      * @param string $assunto Assunto da mensagem.
      */
-    public function setAssunto($assunto)
+    private function setAssunto($assunto)
     {
       $this->assunto = $assunto;
     }
@@ -112,7 +128,7 @@
      * 
      * @param string $html Código HTML da mensagem.
      */
-    public function setHtml($html)
+    private function setHtml($html)
     {
       $this->html = $html;
     }
@@ -122,7 +138,7 @@
      * 
      * @param string $dataHoraProgramada Data de hora programada para o envio.
      */
-    public function setDataHoraProgramada($dataHoraProgramada)
+    private function setDataHoraProgramada($dataHoraProgramada)
     {
       if (!empty($dataHoraProgramada))
       {

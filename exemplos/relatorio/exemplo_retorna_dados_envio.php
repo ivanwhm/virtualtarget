@@ -10,8 +10,8 @@
 
   try
   {
-    $retornoDadosEnvio = new VirtualTargetRetornaDadosEnvio('webstore', 'ztwg0wvzzcac');
-    $retornoDadosEnvio->setEnvioId(242);
+    $retornoDadosEnvio = new VirtualTargetRetornaDadosEnvio('', '');
+    $retornoDadosEnvio->setEnvioId(243);
     if ($retornoDadosEnvio->processa())
     {
       if ($retornoDadosEnvio->getResultado() instanceof VirtualTargetRetornaDadosEnvioRetorno)
@@ -23,8 +23,10 @@
         echo 'Assunto da mensagem.....: ' . $retornoDadosEnvio->getResultado()->getAssunto() . PHP_EOL;
         echo 'Código HTML.............: ' . $retornoDadosEnvio->getResultado()->getHtml() . PHP_EOL;
         echo 'Data e hora do envio....: ' . $retornoDadosEnvio->getResultado()->getDataHoraProgramada()->format('d/m/Y H:i') . PHP_EOL;
-      }
-    }
+      } else
+        echo 'Código ' . $retornoDadosEnvio->getEnvioId() . ' não encontrado.';
+    } else
+      echo 'Código ' . $retornoDadosEnvio->getEnvioId() . ' não encontrado.';
   } catch (Exception $exc)
   {
     echo $exc->getMessage();

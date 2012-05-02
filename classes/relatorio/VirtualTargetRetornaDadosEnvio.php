@@ -86,14 +86,7 @@
         $retorno = $cliente->__soapCall('RetornaDadosEnvio', $this->getParametros());
         if (isset($retorno[0]) and $retorno[0] instanceof stdClass)
         {
-          $this->resultado = new VirtualTargetRetornaDadosEnvioRetorno();
-          $this->resultado->setCampanhaId(isset($retorno[0]->campanhaId) ? $retorno[0]->campanhaId : NULL);
-          $this->resultado->setRemetenteNome(isset($retorno[0]->remetente_nome) ? $retorno[0]->remetente_nome : '');
-          $this->resultado->setRemetenteEmail(isset($retorno[0]->remetente_email) ? $retorno[0]->remetente_email : '');
-          $this->resultado->setRemetenteReplay(isset($retorno[0]->remetente_reply) ? $retorno[0]->remetente_reply : '');
-          $this->resultado->setAssunto(isset($retorno[0]->assunto) ? $retorno[0]->assunto : '');
-          $this->resultado->setHtml(isset($retorno[0]->html) ? $retorno[0]->html : '');
-          $this->resultado->setDataHoraProgramada(isset($retorno[0]->datahora_programada) ? $retorno[0]->datahora_programada : NULL);
+          $this->resultado = new VirtualTargetRetornaDadosEnvioRetorno($retorno[0]);
           return TRUE;
         }
       }

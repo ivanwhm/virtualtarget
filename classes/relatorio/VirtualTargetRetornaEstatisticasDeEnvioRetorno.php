@@ -134,7 +134,7 @@
       $this->setQuantidadeProcessados(isset($retorno->processados) ? $retorno->processados : 0);
       $this->setDuracaoEnvio(isset($retorno->duracao) ? $retorno->duracao : '');
       $this->setQuantidadeConexoes(isset($retorno->quantidade_conexoes) ? $retorno->quantidade_conexoes : 0);
-      $this->setQuantidadeOutput(isset($retorno->quantidade_output) ? $retorno->quantidade_output : 0);
+      $this->setQuantidadeOutput(isset($retorno->quantidade_optout) ? $retorno->quantidade_optout : 0);
       $this->setQuantidadeVisualizadosUnico(isset($retorno->visualizados) ? $retorno->visualizados : 0);
       $this->setQuantidadeVisualizadosTotal(isset($retorno->visualizados_total) ? $retorno->visualizados_total : 0);
       $this->setQuantidadeClicadosUnico(isset($retorno->clicados) ? $retorno->clicados : 0);

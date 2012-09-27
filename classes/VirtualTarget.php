@@ -24,7 +24,7 @@
      * Contém o login de acesso ao webservice.
      * 
      * @var string
-     */    
+     */
     private $login;
 
     /**
@@ -87,7 +87,14 @@
       ini_set("soap.wsdl_cache_enabled", 0);
       try
       {
-        return new SoapClient($this->urlDescritor);
+        $opcoes = array(
+          'soap_version' => SOAP_1_1,
+          'features' => SOAP_USE_XSI_ARRAY_TYPE
+        );
+        if (@fopen($this->urlDescritor, "r"))
+          return new SoapClient($this->urlDescritor, $opcoes);
+        else
+          throw new Exception('Servidor fora do ar.');
       } catch (SoapFault $sf)
       {
         throw new Exception($sf->getMessage());

@@ -1,6 +1,12 @@
 <?php
 
-  class VirtualTargetRetornaEstatisticasDeEnvioRetorno
+  /**
+   * Classe com os atributos de retorno do método EstatisticasDeEnvio.
+   * 
+   * @author Ivan Wilhelm <ivan.whm@me.com>
+   * @version 1.0
+   */
+  class VTRetornaEstatisticasDeEnvioRetorno
   {
 
     /**

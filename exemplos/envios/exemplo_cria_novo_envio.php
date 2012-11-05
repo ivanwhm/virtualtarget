@@ -5,12 +5,12 @@
 
   //Importa as classes
   require '../../classes/VirtualTarget.php';
-  require '../../classes/envios/VirtualTargetCriaNovoEnvio.php';
+  require '../../classes/envios/VTCriaNovoEnvio.php';
 
   //Importa
   try
   {
-    $criar = new VirtualTargetCriaNovoEnvio('', '');
+    $criar = new VTCriaNovoEnvio('', '');
     $criar->setRemetenteNome('Teste');
     $criar->setRemetenteEmail('teste@teste.com.br');
     $criar->setRemetenteReply('teste@teste.com.br');

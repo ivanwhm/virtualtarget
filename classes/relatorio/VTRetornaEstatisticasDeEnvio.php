@@ -8,7 +8,7 @@
    * @version 1.0
    * @final
    */
-  final class VirtualTargetRetornaEstatisticasDeEnvio extends VirtualTarget
+  final class VTRetornaEstatisticasDeEnvio extends VirtualTarget
   {
 
     /**
@@ -52,7 +52,7 @@
     /**
      * Retorna o objeto contendo as informações de retorno.
      * 
-     * @return VirtualTargetRetornaEstatisticasDeEnvioRetorno
+     * @return VTRetornaEstatisticasDeEnvioRetorno
      */
     public function getResultado()
     {
@@ -86,7 +86,7 @@
         $retorno = $cliente->__soapCall('RetornaEstatisticasDeEnvio', $this->getParametros());
         if ((isset($retorno[0])) and ($retorno[0] instanceof stdClass))
         {
-          $this->resultado = new VirtualTargetRetornaEstatisticasDeEnvioRetorno($retorno[0]);
+          $this->resultado = new VTRetornaEstatisticasDeEnvioRetorno($retorno[0]);
           return TRUE;
         }
       }

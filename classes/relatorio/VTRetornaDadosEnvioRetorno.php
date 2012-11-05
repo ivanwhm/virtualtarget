@@ -6,7 +6,7 @@
    * @author Ivan Wilhelm <ivan.whm@me.com>
    * @version 1.0
    */
-  class VirtualTargetRetornaDadosEnvioRetorno
+  class VTRetornaDadosEnvioRetorno
   {
 
     /**

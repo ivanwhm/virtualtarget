@@ -9,7 +9,7 @@
    * @version 1.0
    * @final
    */
-  final class VirtualTargetImportaContatos extends VirtualTarget
+  final class VTImportaContatos extends VirtualTarget
   {
 
     /**

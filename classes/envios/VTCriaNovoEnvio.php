@@ -7,7 +7,7 @@
    * @version 1.0
    * @final
    */
-  final class VirtualTargetCriaNovoEnvio extends VirtualTarget
+  final class VTCriaNovoEnvio extends VirtualTarget
   {
 
     /**

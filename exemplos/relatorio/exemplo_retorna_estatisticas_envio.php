@@ -5,16 +5,16 @@
 
   //Importa as classes
   require '../../classes/VirtualTarget.php';
-  require '../../classes/relatorio/VirtualTargetRetornaEstatisticasDeEnvio.php';
-  require '../../classes/relatorio/VirtualTargetRetornaEstatisticasDeEnvioRetorno.php';
+  require '../../classes/relatorio/VTRetornaEstatisticasDeEnvio.php';
+  require '../../classes/relatorio/VTRetornaEstatisticasDeEnvioRetorno.php';
 
   try
   {
-    $retornoDadosEnvio = new VirtualTargetRetornaEstatisticasDeEnvio('', '');
+    $retornoDadosEnvio = new VTRetornaEstatisticasDeEnvio('', '');
     $retornoDadosEnvio->setEnvioId(243);
     if ($retornoDadosEnvio->processa())
     {
-      if ($retornoDadosEnvio->getResultado() instanceof VirtualTargetRetornaEstatisticasDeEnvioRetorno)
+      if ($retornoDadosEnvio->getResultado() instanceof VTRetornaEstatisticasDeEnvioRetorno)
       {
         echo 'Código do envio.................: ' . $retornoDadosEnvio->getResultado()->getCodigo() . PHP_EOL;
         echo 'Assunto da mensagem.............: ' . $retornoDadosEnvio->getResultado()->getAssunto() . PHP_EOL;
